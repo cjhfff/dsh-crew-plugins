@@ -1,0 +1,16 @@
+node_modules/
+.tmp/
+.progress/
+*.log
+# Probe outputs record local paths
+**/*-probe-result.json
+**/acp-probe-result.json
+# Machine-specific plugin (imports this harness's runtime by relative path)
+dsh-plugin-context-guard/
+# Duplicate of releases/dsh-plugin-projects-0.1.0.tgz
+dsh-plugin-projects/*.tgz
+# Dev-only probes (read local credential files)
+dsh-plugin-crew/gemini/probe.mjs
+dsh-plugin-crew/grok/probe.mjs
+# Untested 0.2.0-dev source; the published Projects plugin is releases/dsh-plugin-projects-0.1.1.tgz (source inside the tarball)
+dsh-plugin-projects/

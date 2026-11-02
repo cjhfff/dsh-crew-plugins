@@ -1,0 +1,14 @@
+# Crew Grok home template (GROK_HOME source; copied per run). The key comes from the environment variable named in env_key,
+# never from this file. Point crew-ui.grok.home at your own folder to use another endpoint or model.
+[models]
+default = "xai"
+
+[model."xai"]
+model = "grok-4"
+base_url = "https://api.x.ai/v1"
+name = "xAI grok-4"
+api_backend = "responses"
+env_key = "XAI_API_KEY"
+
+[ui]
+permission_mode = "always-approve"

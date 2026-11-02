@@ -1,0 +1,76 @@
+{
+  "name": "dsh-plugin-crew",
+  "version": "0.2.1",
+  "description": "Crew multi-agent coordination preset and session header view for DeepSeek Harness",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./typert": "./lib/typert.host.js",
+    "./remote": "./lib/typert.remote-client.js"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "src/client/index.js",
+    "build.mjs",
+    "cordis.patch.yml",
+    "preset.patch.yml",
+    "README.md",
+    "gemini/launch.mjs",
+    "gemini/README.md",
+    "src/client/lanes-model.cjs",
+    "src/client/lanes-view.cjs",
+    "acp-progress.mjs",
+    "src/remote.js",
+    "src/host/index.js",
+    "lib/typert.host.js",
+    "lib/typert.remote-client.js",
+    "codex/hook.mjs",
+    "codex/install-hooks.mjs",
+    "src/host/workflows.js",
+    "skills/save-workflow/SKILL.md",
+    "src/host/executors.js",
+    "grok/home/config.toml",
+    "grok/launch.mjs",
+    "grok/README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "check:build": "node build.mjs --check"
+  },
+  "engines": {
+    "dsh": "0.2.1-rc.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml",
+        "./preset.patch.yml"
+      ]
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-workflow-run",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-api-gateway"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.5 <5"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-subagent-acp": "0.2.1-rc.5"
+  }
+}
